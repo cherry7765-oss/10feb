@@ -1,0 +1,91 @@
+/* Romantic gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffe1e7);
+    overflow: hidden;
+}
+
+/* Floating hearts animation */
+.floating-hearts::after {
+    content: "❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 30px;
+    color: #ff4d6d;
+    animation: floatHearts 10s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes floatHearts {
+    0% { transform: translate(-50%, 100vh) rotate(0deg); }
+    50% { transform: translate(-50%, 50vh) rotate(180deg); }
+    100% { transform: translate(-50%, -100vh) rotate(360deg); }
+}
+
+/* Main white box container */
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    min-height: 350px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* Heart icon on top */
+.icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Buttons container */
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Button style */
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Yes button */
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+/* No button */
+#noBtn {
+    background-color: #808080;
+    color: white;
+    position: absolute;
+    transition: left 0.2s ease, top 0.2s ease;
+    z-index: 10;
+}
